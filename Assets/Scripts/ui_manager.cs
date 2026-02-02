@@ -2,6 +2,21 @@ using UnityEngine;
 
 public class ui_manager : MonoBehaviour
 {
+    /*
+     * public void change_constant_oxygen_loss_multiplier_value(float new_num)
+     * 
+     * public void lose_stress(float stress_value)
+     * public void gain_stress(float stress_value)
+     * 
+     * public void lose_hp(float damage)
+     * public void gain_hp(float heal)
+     * 
+     * 
+     */
+
+    // lose breath speed muliplyer
+    public float constant_oxygen_loss_multiplier = 1
+
 
     // Variables for hp and stress bar
     Transform hp_bar;
@@ -19,6 +34,7 @@ public class ui_manager : MonoBehaviour
     Transform o2_bar;
     private float max_o2 = 100;
     public float cur_o2 = 50;
+
 
 
     void Start()
@@ -75,10 +91,14 @@ public class ui_manager : MonoBehaviour
     {
         cur_o2 = Mathf.Clamp(cur_o2 + (50 * Time.deltaTime), 0, 100);
     }
-    void lose_breath(float multiplier)
+    void lose_breath()
     {
-        cur_o2 = Mathf.Clamp(cur_o2 - (10 * Time.deltaTime * multiplier), 0,100);
+        cur_o2 = Mathf.Clamp(cur_o2 - (10 * Time.deltaTime * constant_oxygen_loss_multiplier), 0,100);
         check_o2_level();
+    }
+    public void change_constant_oxygen_loss_multiplier_value(float new_num)
+    {
+        constant_oxygen_loss_multiplier = new_num;
     }
     void check_o2_level()
     {
@@ -95,11 +115,11 @@ public class ui_manager : MonoBehaviour
         cur_stress = Mathf.Clamp(cur_stress + (constant_stress_value * Time.deltaTime), 0, 100);
         check_stress_level();
     }
-    void lose_stress(float stress_value)
+    public void lose_stress(float stress_value)
     {
         cur_stress = Mathf.Clamp(cur_stress - (stress_value * Time.deltaTime), 0, 100);
     }
-    void gain_stress(float stress_value)
+    public void gain_stress(float stress_value)
     {
         cur_stress = Mathf.Clamp(cur_stress + (stress_value * Time.deltaTime), 0, 100);
         check_stress_level();
@@ -114,12 +134,12 @@ public class ui_manager : MonoBehaviour
     }
 
     // Health functions
-    void lose_hp(float damage)
+    public void lose_hp(float damage)
     {
         cur_hp = Mathf.Clamp(cur_hp - (damage * Time.deltaTime), 0, 100);
         check_hp_level();
     }
-    void gain_hp(float heal)
+    public void gain_hp(float heal)
     {
         cur_hp = Mathf.Clamp(cur_hp + (heal * Time.deltaTime), 0, 100);
     }
