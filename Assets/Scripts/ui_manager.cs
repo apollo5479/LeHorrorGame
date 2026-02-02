@@ -15,7 +15,7 @@ public class ui_manager : MonoBehaviour
      */
 
     // lose breath speed muliplyer
-    public float constant_oxygen_loss_multiplier = 1
+    public float constant_oxygen_loss_multiplier = 1;
 
 
     // Variables for hp and stress bar
@@ -66,7 +66,7 @@ public class ui_manager : MonoBehaviour
         }
         else
         {
-            lose_breath(2);
+            lose_breath();
             constant_stress_gain(10);
         }
 
