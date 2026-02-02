@@ -1,0 +1,19 @@
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+Logs/
+MemoryCaptures/
+
+# Visual Studio / MonoDevelop generated
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.userprefs
+
+# OS generated
+DS_Store
+Thumbs.db
