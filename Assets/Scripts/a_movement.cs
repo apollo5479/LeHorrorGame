@@ -5,9 +5,9 @@ public class a_movement : MonoBehaviour
 
     Rigidbody body;
     public float speed = 1;
-    public float forward_force = 5;
-    public float backward_force = -3;
-    public Vector3 rotation_velocity = new Vector3(0, 25, 0);
+    public float forward_force = 20;
+    public float backward_force = -15;
+    public Vector3 rotation_velocity = new Vector3(0, 75, 0);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
