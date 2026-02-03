@@ -11,8 +11,13 @@ public class ui_manager : MonoBehaviour
      * public void lose_hp(float damage)
      * public void gain_hp(float heal)
      * 
+     * completed_task()
+     * new_task() // call when new task objects are created
      * 
      */
+
+    public int tasks_completed = 0;
+    public int tasks_pending = 0;
 
     // lose breath speed muliplyer
     public float constant_oxygen_loss_multiplier = 1;
@@ -42,6 +47,9 @@ public class ui_manager : MonoBehaviour
         // Set up hp and stress bar and o2
         locate_bars();
 
+        // find number of tasks in the world.
+        locate_tasks();
+
     }
 
     void Update()
@@ -67,11 +75,31 @@ public class ui_manager : MonoBehaviour
         else
         {
             lose_breath();
-            constant_stress_gain(10);
+            constant_stress_gain(3);
         }
 
     }
-    
+
+
+    void locate_tasks()
+    {
+        // find number of objects with task tag in the world
+        // TO DO
+
+    }
+
+    void completed_task()
+    {
+        tasks_completed++;
+        tasks_pending--;
+        lose_stress(30);
+    }
+    void new_task()
+    {
+        tasks_pending++;
+        gain_stress(10);
+    }
+
     // Get the scale bars from the children list
     void locate_bars()
     {
@@ -150,5 +178,4 @@ public class ui_manager : MonoBehaviour
             // DIE
         }
     }
-
 }
