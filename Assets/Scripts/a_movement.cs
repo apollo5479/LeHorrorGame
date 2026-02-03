@@ -4,6 +4,7 @@ public class a_movement : MonoBehaviour
 {
 
     Rigidbody body;
+    public float speed = 1;
     public float forward_force = 5;
     public float backward_force = -3;
     public Vector3 rotation_velocity = new Vector3(0, 25, 0);
@@ -21,11 +22,11 @@ public class a_movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            body.AddForce(transform.forward * forward_force);
+            body.AddForce(transform.forward * forward_force * speed);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            body.AddForce(transform.forward * backward_force);
+            body.AddForce(transform.forward * backward_force * speed);
         }
         if (Input.GetKey(KeyCode.D))
         {
@@ -36,6 +37,14 @@ public class a_movement : MonoBehaviour
         {
             Quaternion deltaRotation = Quaternion.Euler((-1) * rotation_velocity * Time.fixedDeltaTime);
             body.MoveRotation(body.rotation * deltaRotation);
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 2;
+        }
+        else
+        {
+            speed = 1;
         }
     }
 }
