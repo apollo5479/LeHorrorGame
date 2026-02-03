@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - WallDoor
+  - Classes
+  - Paper
+  - Presentation
+  - TaskModel
   layers:
   - Default
   - TransparentFX

@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\paolo\\LeHorrorGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\paolo\\LeHorrorGame\\Packages\\com.unity.postprocessing\\PostProcessing\\Runtime\\PostProcessLayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Packages\\com.unity.postprocessing\\PostProcessing\\Runtime\\PostProcessLayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\a_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\a_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Player_Movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player_Movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Tasks_Logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Tasks_Logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Player_MouseToCamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player_MouseToCamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Tasks_SpawnBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Tasks_SpawnBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Task_AlertFacingPlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Task_AlertFacingPlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Monster_SpawnLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Monster_SpawnLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,41 +35,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PostProcessLayer.cs",
-              "DocumentMoniker": "C:\\Users\\paolo\\LeHorrorGame\\Packages\\com.unity.postprocessing\\PostProcessing\\Runtime\\PostProcessLayer.cs",
-              "RelativeDocumentMoniker": "Packages\\com.unity.postprocessing\\PostProcessing\\Runtime\\PostProcessLayer.cs",
-              "ToolTip": "C:\\Users\\paolo\\LeHorrorGame\\Packages\\com.unity.postprocessing\\PostProcessing\\Runtime\\PostProcessLayer.cs",
-              "RelativeToolTip": "Packages\\com.unity.postprocessing\\PostProcessing\\Runtime\\PostProcessLayer.cs",
-              "ViewState": "AgIAANkBAAAAAAAAAAASwPEBAAANAAAAAAAAAA==",
+              "Title": "a_movement.cs",
+              "DocumentMoniker": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\a_movement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\a_movement.cs",
+              "ToolTip": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\a_movement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\a_movement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T09:17:43.587Z",
+              "WhenOpened": "2026-02-03T02:24:59.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Task_AlertFacingPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Task_AlertFacingPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Task_AlertFacingPlayer.cs",
+              "ToolTip": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Task_AlertFacingPlayer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Task_AlertFacingPlayer.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T01:14:44.708Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Player_MouseToCamera.cs",
-              "DocumentMoniker": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Player_MouseToCamera.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player_MouseToCamera.cs",
-              "ToolTip": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Player_MouseToCamera.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player_MouseToCamera.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
+              "Title": "Tasks_SpawnBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Tasks_SpawnBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks_SpawnBehaviour.cs",
+              "ToolTip": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Tasks_SpawnBehaviour.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tasks_SpawnBehaviour.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T08:47:03.484Z",
+              "WhenOpened": "2026-02-03T01:02:12.135Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Player_Movement.cs",
-              "DocumentMoniker": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Player_Movement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Movement.cs",
-              "ToolTip": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Player_Movement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player_Movement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "Tasks_Logic.cs",
+              "DocumentMoniker": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Tasks_Logic.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks_Logic.cs",
+              "ToolTip": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Tasks_Logic.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tasks_Logic.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T08:12:30.107Z",
+              "WhenOpened": "2026-02-02T19:06:57.107Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Monster_SpawnLogic.cs",
+              "DocumentMoniker": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Monster_SpawnLogic.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Monster_SpawnLogic.cs",
+              "ToolTip": "C:\\Users\\paolo\\LeHorrorGame\\Assets\\Scripts\\Monster_SpawnLogic.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Monster_SpawnLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T18:53:32.756Z"
             }
           ]
         }
