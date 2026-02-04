@@ -5,6 +5,7 @@
 [Bb]uild/
 Logs/
 MemoryCaptures/
+UserSettings/
 
 # Visual Studio / MonoDevelop generated
 *.csproj

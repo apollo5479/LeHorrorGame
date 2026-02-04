@@ -88,7 +88,7 @@ public class ui_manager : MonoBehaviour
 
     }
 
-    void completed_task()
+    public void completed_task()
     {
         tasks_completed++;
         tasks_pending--;

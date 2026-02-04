@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Tasks_Logic : MonoBehaviour
 {
@@ -19,9 +21,18 @@ public class Tasks_Logic : MonoBehaviour
     [Header("Presentation Gameplay")]
     public float windowToBreathe = 0.7f;
 
+    [SerializeField] private GameObject breathePrompt;
+    private ui_manager UI_script;
     private int breathsDone = 0;
     private bool didYouInhale = false;
     private bool presenting = false;
+
+    void Start() {
+        GameObject target = GameObject.Find("UI_Manager");
+        breathePrompt.SetActive(false);
+        UI_script = target.GetComponent<ui_manager>();
+        // right now it's only spawning tasks at the start. but maybe the player can't finish them all so need to respawn some as time goes on
+    }
 
     void Update()
     {
@@ -72,6 +83,7 @@ public class Tasks_Logic : MonoBehaviour
         {
             Destroy(other.gameObject);
             StartCoroutine(HandlePresentation());
+            // TODO turn off player movement
         }
     }
 
@@ -87,15 +99,16 @@ public class Tasks_Logic : MonoBehaviour
             didYouInhale = false;
 
             yield return new WaitForSeconds(Random.Range(1f, 4f));
-            // TODO: Show "BREATHE IN" UI prompt
+            breathePrompt.SetActive(true);
             Debug.Log("BREATHE NOW");
 
             yield return new WaitForSeconds(windowToBreathe);
-            // TODO: Hide UI prompt
+            breathePrompt.SetActive(false);
 
             if (!didYouInhale)
             {
                 presenting = false;
+                // TODO turn on player movement
                 stressMonsterAngry();
                 yield break;
             }
@@ -104,7 +117,7 @@ public class Tasks_Logic : MonoBehaviour
         }
 
         presenting = false;
-
+        // TODO player movement back on
         if (presentationsDone > 0)
         {
             presentationsDone--;
@@ -117,9 +130,20 @@ public class Tasks_Logic : MonoBehaviour
 
     void CompleteTask(int taskIndex)
     {
+        bool gameDone = true;
         taskProgress.Play();
         tasksCompleted[taskIndex] = true;
-        // TODO: Update task UI
+        foreach (bool x in tasksCompleted) {
+            if (x == false) {
+                gameDone = false;
+                break;
+            }
+        }
+        if (gameDone) 
+        {
+            SceneManager.LoadScene("WinGame");
+        }
+        UI_script.completed_task();
     }
 
     void stressMonsterAngry()
