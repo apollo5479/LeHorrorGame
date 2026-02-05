@@ -42,6 +42,8 @@ public class Tasks_SpawnBehaviour : MonoBehaviour
             Debug.Log("New task.");
             objects[i].SetActive(true);
         }
+
+        Invoke(nameof(ActivateRandom), 180f);
     }
 
     void Shuffle(List<GameObject> list)

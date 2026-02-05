@@ -12,11 +12,14 @@ public class Tasks_Logic : MonoBehaviour
     public AudioSource breatheIn;
 
     [Header("Tasks")]
-    public bool[] tasksCompleted = { false, false, false, false };
-
+    public bool[] tasksCompleted = { false, false, false};
     public int papersCollected = 10;
     public int classesWentTo = 4;
     public int presentationsDone = 1;
+    public float paperStressValue = 2f;
+    public float classStressValue = 5f;
+    public float presentationStressValue = 60f;
+    [SerializeField] private UI_TaskTracker taskTracker;
 
     [Header("Presentation Gameplay")]
     public float windowToBreathe = 0.7f;
@@ -50,15 +53,15 @@ public class Tasks_Logic : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("TaskModel")) {
-            Destroy(other.gameObject);
-        }
+        other.gameObject.SetActive(false);
         if (other.CompareTag("Paper"))
         {
+            taskTracker.IncrementTask("Papers collected");
+            UI_script.lose_stress(paperStressValue);
             // .Play();
             Debug.Log("Paper hit");
-            Destroy(other.gameObject);
-            UI_script.gain_hp(4f);
+            //Destroy(other.gameObject);
+            UI_script.gain_hp(paperStressValue * 2);
             Debug.Log("You gained hp");
             if (papersCollected > 0)
             {
@@ -72,11 +75,13 @@ public class Tasks_Logic : MonoBehaviour
 
         if (other.CompareTag("Classes"))
         {
-            UI_script.gain_hp(10f);
+            taskTracker.IncrementTask("Classes attended");
+            UI_script.lose_stress(classStressValue);
+            UI_script.gain_hp(classStressValue*2);
             Debug.Log("You gained hp");
             // .Play();
             Debug.Log("Class Visited");
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
 
             if (classesWentTo > 0)
             {
@@ -90,9 +95,11 @@ public class Tasks_Logic : MonoBehaviour
 
         if (other.CompareTag("Presentation") && !presenting)
         {
-            UI_script.gain_hp(30f);
+            
+            UI_script.lose_stress(presentationStressValue/4);
+            UI_script.gain_hp(presentationStressValue/2);
             Debug.Log("You gained hp");
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
             StartCoroutine(HandlePresentation());
             movementScript.toggleMovement(false);
         }
@@ -123,14 +130,16 @@ public class Tasks_Logic : MonoBehaviour
                 Debug.Log("Failed to breathe.");
                 presenting = false;
                 movementScript.toggleMovement(true);
+                presentation.Stop();
                 stressMonsterAngry();
                 yield break;
             }
 
             breathsDone++;
         }
-
+        taskTracker.IncrementTask("Presentations done");
         presenting = false;
+        presentation.Stop();
         movementScript.toggleMovement(true);
         UI_script.gain_hp(60f);
         Debug.Log("You gained hp");
@@ -149,17 +158,9 @@ public class Tasks_Logic : MonoBehaviour
         bool gameDone = true;
         taskProgress.Play();
         tasksCompleted[taskIndex] = true;
-        foreach (bool x in tasksCompleted) {
-            if (x == false) {
-                gameDone = false;
-                break;
-            }
-        }
-        if (gameDone) 
-        {
-            SceneManager.LoadScene("WinGame");
-        }
-        if (taskIndex == 0) { // paper
+        
+        if (taskIndex == 0) // paper
+        { 
             UI_script.completed_task(20f);
         }
         if (taskIndex == 1) // class
@@ -173,6 +174,16 @@ public class Tasks_Logic : MonoBehaviour
         if (taskIndex == 3) // TO DO
         {
             UI_script.completed_task(99f); // TO DO
+        }
+        foreach (bool x in tasksCompleted) {
+            if (x == false) {
+                gameDone = false;
+                break;
+            }
+        }
+        if (gameDone)
+        {
+            SceneManager.LoadScene("WinGame");
         }
     }
 
