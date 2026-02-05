@@ -810,7 +810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &51103388
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3862,7 +3862,7 @@ MonoBehaviour:
   classesWentTo: 4
   presentationsDone: 1
   windowToBreathe: 0.7
-  breathePrompt: {fileID: 51103387}
+  breathePrompt: {fileID: 0}
 --- !u!114 &182358282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3879,7 +3879,6 @@ MonoBehaviour:
   forward_force: 13
   backward_force: -10
   rotation_velocity: {x: 0, y: 25, z: 0}
-  allowedToMove: 1
 --- !u!54 &182358283
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10627,7 +10626,6 @@ MonoBehaviour:
   - {fileID: 980011310}
   - {fileID: 1480614468}
   activeCount: 2
-  stress_value: 30
 --- !u!4 &622640946
 Transform:
   m_ObjectHideFlags: 0
@@ -14590,135 +14588,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8890520643309951308, guid: 04881ab7e64782b4792f88d82a7bcd64, type: 3}
   m_PrefabInstance: {fileID: 876997672}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &878262366
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 878262368}
-  - component: {fileID: 878262367}
-  m_Layer: 0
-  m_Name: Audio Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &878262367
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878262366}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &878262368
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878262366}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 797.5, y: 448.5, z: 26.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &878759169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27344,7 +27213,6 @@ MonoBehaviour:
   - {fileID: 1312474677}
   - {fileID: 173015172}
   activeCount: 10
-  stress_value: 2
 --- !u!4 &1566751462
 Transform:
   m_ObjectHideFlags: 0
@@ -27915,7 +27783,6 @@ MonoBehaviour:
   - {fileID: 277662449}
   - {fileID: 974389420}
   activeCount: 4
-  stress_value: 5
 --- !u!4 &1600245181
 Transform:
   m_ObjectHideFlags: 0
@@ -37153,4 +37020,3 @@ SceneRoots:
   - {fileID: 622640946}
   - {fileID: 716485508}
   - {fileID: 1044198611}
-  - {fileID: 878262368}

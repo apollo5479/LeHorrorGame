@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ui_manager : MonoBehaviour
 {
@@ -88,16 +89,16 @@ public class ui_manager : MonoBehaviour
 
     }
 
-    public void completed_task()
+    public void completed_task(float stressDecrease)
     {
         tasks_completed++;
         tasks_pending--;
-        lose_stress(30);
+        lose_stress(stressDecrease);
     }
-    void new_task()
+    public void new_task(float stressIncrease)
     {
         tasks_pending++;
-        gain_stress(10);
+        gain_stress(stressIncrease);
     }
 
     // Get the scale bars from the children list
@@ -175,7 +176,10 @@ public class ui_manager : MonoBehaviour
     {
         if (cur_hp <= 1)
         {
-            // DIE
+            SceneManager.LoadScene("EndGame");
+        }
+        if (cur_hp > 100) {
+            cur_hp = max_hp;
         }
     }
 }

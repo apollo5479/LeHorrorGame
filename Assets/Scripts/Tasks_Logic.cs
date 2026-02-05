@@ -23,6 +23,7 @@ public class Tasks_Logic : MonoBehaviour
 
     [SerializeField] private GameObject breathePrompt;
     private ui_manager UI_script;
+    private a_movement movementScript;
     private int breathsDone = 0;
     private bool didYouInhale = false;
     private bool presenting = false;
@@ -31,7 +32,10 @@ public class Tasks_Logic : MonoBehaviour
         GameObject target = GameObject.Find("UI_Manager");
         breathePrompt.SetActive(false);
         UI_script = target.GetComponent<ui_manager>();
+        target = GameObject.Find("Player");
+        movementScript = target.GetComponent<a_movement>();
         // right now it's only spawning tasks at the start. but maybe the player can't finish them all so need to respawn some as time goes on
+        // try referencing Task_SpawnBehaviour and it's activate random function every 3 minutes?, also instead of destroying tasks, just set active to false
     }
 
     void Update()
@@ -51,9 +55,11 @@ public class Tasks_Logic : MonoBehaviour
         }
         if (other.CompareTag("Paper"))
         {
+            // .Play();
             Debug.Log("Paper hit");
             Destroy(other.gameObject);
-
+            UI_script.gain_hp(4f);
+            Debug.Log("You gained hp");
             if (papersCollected > 0)
             {
                 papersCollected--;
@@ -66,6 +72,9 @@ public class Tasks_Logic : MonoBehaviour
 
         if (other.CompareTag("Classes"))
         {
+            UI_script.gain_hp(10f);
+            Debug.Log("You gained hp");
+            // .Play();
             Debug.Log("Class Visited");
             Destroy(other.gameObject);
 
@@ -81,21 +90,25 @@ public class Tasks_Logic : MonoBehaviour
 
         if (other.CompareTag("Presentation") && !presenting)
         {
+            UI_script.gain_hp(30f);
+            Debug.Log("You gained hp");
             Destroy(other.gameObject);
             StartCoroutine(HandlePresentation());
-            // TODO turn off player movement
+            movementScript.toggleMovement(false);
         }
     }
 
     IEnumerator HandlePresentation()
     {
+        Debug.Log("presentation 1");
         presenting = true;
         breathsDone = 0;
 
         presentation.Play();
-
+        Debug.Log("presentation 2");
         while (breathsDone < 5 && presenting)
         {
+            Debug.Log("presentation loop");
             didYouInhale = false;
 
             yield return new WaitForSeconds(Random.Range(1f, 4f));
@@ -107,8 +120,9 @@ public class Tasks_Logic : MonoBehaviour
 
             if (!didYouInhale)
             {
+                Debug.Log("Failed to breathe.");
                 presenting = false;
-                // TODO turn on player movement
+                movementScript.toggleMovement(true);
                 stressMonsterAngry();
                 yield break;
             }
@@ -117,7 +131,9 @@ public class Tasks_Logic : MonoBehaviour
         }
 
         presenting = false;
-        // TODO player movement back on
+        movementScript.toggleMovement(true);
+        UI_script.gain_hp(60f);
+        Debug.Log("You gained hp");
         if (presentationsDone > 0)
         {
             presentationsDone--;
@@ -143,7 +159,21 @@ public class Tasks_Logic : MonoBehaviour
         {
             SceneManager.LoadScene("WinGame");
         }
-        UI_script.completed_task();
+        if (taskIndex == 0) { // paper
+            UI_script.completed_task(20f);
+        }
+        if (taskIndex == 1) // class
+        {
+            UI_script.completed_task(20f);
+        }
+        if (taskIndex == 2) // presentation
+        {
+            UI_script.completed_task(60f);
+        }
+        if (taskIndex == 3) // TO DO
+        {
+            UI_script.completed_task(99f); // TO DO
+        }
     }
 
     void stressMonsterAngry()

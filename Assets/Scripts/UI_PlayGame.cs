@@ -17,6 +17,6 @@ public class UI_PlayGame : MonoBehaviour
     }
 
     public void GoToGameLevel() {
-        SceneManager.LoadScene("paoloTestingScene");
+        SceneManager.LoadScene("Game");
     }
 }

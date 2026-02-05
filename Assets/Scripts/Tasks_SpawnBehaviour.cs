@@ -9,8 +9,15 @@ public class Tasks_SpawnBehaviour : MonoBehaviour
     [Header("How many should be active")]
     public int activeCount = 10;
 
+    [Header("How much stress is this task?")]
+    public float stress_value;
+
+    private ui_manager UI_script;
+
     void Start()
     {
+        GameObject target = GameObject.Find("UI_Manager");
+        UI_script = target.GetComponent<ui_manager>();
         ActivateRandom();
     }
 
@@ -31,6 +38,8 @@ public class Tasks_SpawnBehaviour : MonoBehaviour
         // Activate first N
         for (int i = 0; i < activeCount; i++)
         {
+            UI_script.new_task(stress_value);
+            Debug.Log("New task.");
             objects[i].SetActive(true);
         }
     }
